@@ -1,0 +1,48 @@
+
+<div *ngIf="!pato; else elseBlock">
+  <h5>
+    Criar Patologia
+  </h5>
+</div>
+<ng-template #elseBlock>
+  <h5>
+    Editar Patologia: {{pato.nome}}
+  </h5>
+</ng-template>
+
+<form [formGroup]="patologiaForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-row">
+    <div *ngIf="pato" class="form-group col-md-6">
+      <label for="idPatologia">Id</label>
+      <input type="text" class="form-control" id="idPatologia"
+        placeholder="Id da Patologia" formControlName="idPatologia">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome"
+        placeholder="Nome do patologia" formControlName="nome">
+        <app-vmessage
+        *ngIf="f.nome.touched && f.nome.errors"
+        text="Nome da patologia obrigatório!">
+      </app-vmessage>
+
+    </div>
+  </div>
+  <div class="form-row">
+
+    <div class="form-group col-md-12">
+      <label for="descricao">Descrição</label>
+      <textarea class="form-control" id="descricao"
+        placeholder="Descrição sobre Patologia" rows="3" formControlName="descricao"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <button class="btn btn-primary btn-block">Salvar</button>
+    </div>
+    <div class="form-group col-md-6">
+      <a class="btn btn-primary btn-block" routerLink="/patologias">Fechar</a>
+    </div>
+  </div>
+</form>
