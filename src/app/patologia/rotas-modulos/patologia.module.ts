@@ -15,6 +15,6 @@ import { VMessageModule } from '../../shared/components/vmessage/vmessage.module
 
     PatologiaRoutingModule
   ],
-  declarations: [ PatologiaListaComponent, PatologiaFormComponent ]
+  declarations: [PatologiaListaComponent, PatologiaFormComponent]
 })
-export class PatologiaModule { }
+export class PatologiaModule {}

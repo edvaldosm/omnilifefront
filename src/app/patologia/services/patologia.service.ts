@@ -32,10 +32,7 @@ export class PatologiaService {
   }
 
   addPatologia(patologia: Patologia) {
-    this.rr = this.http.post<ResponsePatologia>(
-      API + '/patologia',
-      patologia
-    );
+    this.rr = this.http.post<ResponsePatologia>(API + '/patologia', patologia);
     return this.rr;
   }
 }
