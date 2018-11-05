@@ -12,7 +12,6 @@ import { VMessageModule } from '../../shared/components/vmessage/vmessage.module
     CommonModule,
     ReactiveFormsModule,
     VMessageModule,
-
     PatologiaRoutingModule
   ],
   declarations: [PatologiaListaComponent, PatologiaFormComponent]

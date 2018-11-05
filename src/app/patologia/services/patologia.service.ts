@@ -13,6 +13,7 @@ const API = 'http://localhost:8085/clienteomnilife';
 })
 export class PatologiaService {
   rr: Observable<ResponsePatologia>;
+
   constructor(private http: HttpClient) {}
 
   listarPatologias() {

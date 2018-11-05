@@ -17,14 +17,14 @@ export class PatologiaListaComponent implements OnInit {
 
   ngOnInit() {
     this.carregarLista();
-    PatologiaFormComponent.criouAlterouPatologia.subscribe(pato => {
-      console.log('id recuperado: ' + pato.id);
-      if (pato.novo) {
-        this.patologias.push(pato);
+    PatologiaFormComponent.criouAlterouPatologia.subscribe(patologia => {
+      console.log('id recuperado: ' + patologia.id);
+      if (patologia.novo) {
+        this.patologias.push(patologia);
       } else {
         this.patologias.map((s, i) => {
-          if (s.id === pato.id) {
-            this.patologias[i] = pato;
+          if (s.id === patologia.id) {
+            this.patologias[i] = patologia;
           }
         });
       }
