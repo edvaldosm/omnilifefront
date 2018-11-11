@@ -12,5 +12,5 @@ export class Cliente {
   enderecos: Endereco[];
   medidas: MedidaCorporal[];
   fones: Fone[];
-  // teste
+  
 }
