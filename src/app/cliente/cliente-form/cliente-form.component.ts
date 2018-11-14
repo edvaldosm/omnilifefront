@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Cliente } from '../classes/cliente';
 import { ClienteService } from '../services/cliente.service';
+import { ClienteUtilService } from '../services/cliente.util.service';
 
 @Component({
   selector: 'app-cliente-form',
@@ -15,16 +16,19 @@ export class ClienteFormComponent implements OnInit {
   cliente: Cliente;
   inscricao: Subscription;
   clienteForm: FormGroup;
+  siglas: string[];
 
   constructor(
     private route: ActivatedRoute,
     private service: ClienteService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private serviceUtil: ClienteUtilService
   ) {}
 
   ngOnInit() {
     this.carregarCampos();
+    this.carregarEstados();
   }
 
   onSubmit() {
@@ -54,5 +58,9 @@ export class ClienteFormComponent implements OnInit {
         tpfone: ['']
       })
     });
+  }
+
+  carregarEstados() {
+    this.siglas = this.serviceUtil.ufs;
   }
 }
